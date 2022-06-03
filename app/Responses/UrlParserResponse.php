@@ -2,6 +2,7 @@
 
 namespace App\Responses;
 
+use App\Responses\Contracts\ResponseInterface;
 use Illuminate\Http\Client\Response;
 
 class UrlParserResponse implements ResponseInterface

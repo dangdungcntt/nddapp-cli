@@ -10,12 +10,12 @@ use Illuminate\Support\Facades\Http;
 class NddApp
 {
     protected PendingRequest $client;
-    protected string $baseUrl;
 
-    public function __construct()
+    public function __construct(string $baseUrl)
     {
-        $this->baseUrl = config('app.base_api_url', 'https://nddapp.com');
-        $this->client  = Http::baseUrl($this->baseUrl)->acceptJson()->withoutVerifying();
+        $this->client = Http::baseUrl($baseUrl)
+            ->acceptJson()
+            ->withoutVerifying();
     }
 
     /**

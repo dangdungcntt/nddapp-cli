@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Commands;
+namespace App\Commands\Generators;
 
 use App\NddApp;
 use App\Requests\PasswordGeneratorRequest;

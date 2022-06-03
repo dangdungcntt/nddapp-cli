@@ -36,6 +36,6 @@ HTML;
             return new static('Error', false);
         }
 
-        return new static($apiResponse->ok() ? $apiResponse->json('data') : 'Error', $apiResponse->ok());
+        return new static($apiResponse->ok() ? $apiResponse->json('data') : "Error. Status: " . $apiResponse->status(), $apiResponse->ok());
     }
 }

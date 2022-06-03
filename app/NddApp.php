@@ -2,8 +2,7 @@
 
 namespace App;
 
-use App\Requests\RequestInterface;
-use Illuminate\Http\Client\ConnectionException;
+use App\Requests\Contracts\RequestInterface;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;

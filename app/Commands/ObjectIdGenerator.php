@@ -13,31 +13,14 @@ use function Termwind\{render};
 
 class ObjectIdGenerator extends Command
 {
-    /**
-     * The signature of the command.
-     *
-     * @var string
-     */
-    protected $signature = 'object-id {count=1}';
+    protected $signature = 'object-id {count=1} {--c|count}';
 
-    /**
-     * The description of the command.
-     *
-     * @var string
-     */
     protected $description = 'Generate MongoDB ObjectID';
 
-    /**
-     * Execute the console command.
-     *
-     * @param  \App\NddApp  $nddApp
-     * @return void
-     * @throws \Exception
-     */
     public function handle(NddApp $nddApp): void
     {
         $apiResponse = $nddApp->send(new ObjectIdGeneratorRequest(
-            count: $this->argument('count'),
+            count: $this->option('count') ?? $this->argument('count'),
         ));
         $response    = CommonStringResponse::create($apiResponse);
 

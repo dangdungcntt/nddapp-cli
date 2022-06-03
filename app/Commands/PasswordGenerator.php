@@ -11,27 +11,10 @@ use function Termwind\{render};
 
 class PasswordGenerator extends Command
 {
-    /**
-     * The signature of the command.
-     *
-     * @var string
-     */
     protected $signature = 'password {length=24} {--c|count=1} {--s|symbols=0} {--N|number=1} {--l|lower=1} {--u|upper=1}';
 
-    /**
-     * The description of the command.
-     *
-     * @var string
-     */
     protected $description = 'Generate random password';
 
-    /**
-     * Execute the console command.
-     *
-     * @param  \App\NddApp  $nddApp
-     * @return void
-     * @throws \Exception
-     */
     public function handle(NddApp $nddApp): void
     {
         $apiResponse = $nddApp->send(new PasswordGeneratorRequest(

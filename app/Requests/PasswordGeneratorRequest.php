@@ -2,6 +2,8 @@
 
 namespace App\Requests;
 
+use App\Requests\Contracts\RequestInterface;
+
 class PasswordGeneratorRequest implements RequestInterface
 {
     public function __construct(

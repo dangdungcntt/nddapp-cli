@@ -15,6 +15,8 @@ return [
 
     'name' => 'NDDApp-cli',
 
+    'build_name' => 'nddapp-cli.phar',
+
     /*
     |--------------------------------------------------------------------------
     | Application Version

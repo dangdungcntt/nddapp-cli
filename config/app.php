@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => 'NDDApp-cli',
+    'name' => 'NddApp CLI',
 
     'build_name' => 'nddapp-cli.phar',
 

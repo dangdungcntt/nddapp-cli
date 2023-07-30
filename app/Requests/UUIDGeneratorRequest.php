@@ -8,7 +8,8 @@ class UUIDGeneratorRequest implements RequestInterface
 {
     public function __construct(
         protected int $count = 1,
-    ) {
+    )
+    {
     }
 
     public function body(): array

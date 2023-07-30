@@ -6,7 +6,7 @@ use App\Commands\Abstracts\CommonStringProcessor;
 
 class MD5Generator extends CommonStringProcessor
 {
-    protected $signature = 'md5 {string}';
+    protected $name = 'md5';
 
     protected $description = 'Generate MD5 from string';
 

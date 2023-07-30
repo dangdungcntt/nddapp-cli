@@ -12,6 +12,6 @@ class Debug extends Command
 
     public function handle(): void
     {
-        $this->info(json_encode(config()->all()));
+        $this->info(json_encode(config()->all(), JSON_PRETTY_PRINT));
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 
 class ToCamelCaseTransformer extends CommonStringProcessor
 {
-    protected $signature = 'camel {string}';
+    protected $name = 'camel';
 
     protected $description = 'Convert string to camel case';
 

@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 
 class ToStudlyCaseTransformer extends CommonStringProcessor
 {
-    protected $signature = 'studly {string}';
+    protected $name = 'studly';
 
     protected $description = 'Convert string to studly case';
 

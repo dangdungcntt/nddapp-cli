@@ -6,7 +6,7 @@ use App\Commands\Abstracts\CommonStringProcessor;
 
 class SHA384Generator extends CommonStringProcessor
 {
-    protected $signature = 'sha384 {string}';
+    protected $name = 'sha384';
 
     protected $description = 'Generate SHA384 from string';
 

@@ -4,9 +4,7 @@ namespace App\Commands\Generators;
 
 use App\NddApp;
 use App\Requests\ObjectIdGeneratorRequest;
-use App\Requests\PasswordGeneratorRequest;
 use App\Responses\CommonStringResponse;
-use Illuminate\Console\Scheduling\Schedule;
 use LaravelZero\Framework\Commands\Command;
 
 use function Termwind\{render};
@@ -22,7 +20,7 @@ class ObjectIdGenerator extends Command
         $apiResponse = $nddApp->send(new ObjectIdGeneratorRequest(
             count: $this->option('count') ?? $this->argument('count'),
         ));
-        $response    = CommonStringResponse::create($apiResponse);
+        $response = CommonStringResponse::create($apiResponse);
 
         render($response->toHtml());
     }

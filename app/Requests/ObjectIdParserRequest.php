@@ -8,7 +8,8 @@ class ObjectIdParserRequest implements RequestInterface
 {
     public function __construct(
         protected string $objectId,
-    ) {
+    )
+    {
     }
 
     public function body(): array

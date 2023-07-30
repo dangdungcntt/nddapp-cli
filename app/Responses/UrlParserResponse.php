@@ -9,8 +9,9 @@ class UrlParserResponse implements ResponseInterface
 {
     public function __construct(
         protected array|string $data,
-        protected bool $succeed = true
-    ) {
+        protected bool         $succeed = true
+    )
+    {
     }
 
     public function toHtml(): string
@@ -31,7 +32,7 @@ HTML;
     public static function create($apiResponse): static
     {
         if (!$apiResponse instanceof Response) {
-            return new static((string) $apiResponse, false);
+            return new static((string)$apiResponse, false);
         }
 
         return new static($apiResponse->ok() ? $apiResponse->json('data') : $apiResponse->json('message'),

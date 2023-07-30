@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 
 class ToUpperCaseTransformer extends CommonStringProcessor
 {
-    protected $signature = 'upper {string}';
+    protected $name = 'upper';
 
     protected $description = 'Convert string to upper case';
 

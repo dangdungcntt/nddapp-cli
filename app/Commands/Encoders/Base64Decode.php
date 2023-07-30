@@ -6,7 +6,7 @@ use App\Commands\Abstracts\CommonStringProcessor;
 
 class Base64Decode extends CommonStringProcessor
 {
-    protected $signature = 'base64-decode {string}';
+    protected $name = 'base64-decode';
 
     protected $description = 'Base64 decode string';
 
@@ -20,7 +20,7 @@ class Base64Decode extends CommonStringProcessor
         $remainder = \strlen($data) % 4;
         if ($remainder) {
             $padlen = 4 - $remainder;
-            $data   .= \str_repeat('=', $padlen);
+            $data .= \str_repeat('=', $padlen);
         }
         return \base64_decode(\strtr($data, '-_', '+/'));
     }

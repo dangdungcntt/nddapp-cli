@@ -8,6 +8,6 @@ class GithubReleasesFixedNameStrategy extends \Humbug\SelfUpdate\Strategy\Github
 {
     protected function getDownloadUrl(array $package): string
     {
-        return parent::getDownloadUrl($package).config('app.build_name');
+        return parent::getDownloadUrl($package) . config('app.build_name');
     }
 }

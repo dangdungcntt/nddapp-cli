@@ -8,7 +8,8 @@ class UrlParserRequest implements RequestInterface
 {
     public function __construct(
         protected string $url,
-    ) {
+    )
+    {
     }
 
     public function body(): array

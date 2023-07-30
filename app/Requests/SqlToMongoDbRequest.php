@@ -8,7 +8,8 @@ class SqlToMongoDbRequest implements RequestInterface
 {
     public function __construct(
         protected string $sql
-    ) {
+    )
+    {
     }
 
     public function body(): array

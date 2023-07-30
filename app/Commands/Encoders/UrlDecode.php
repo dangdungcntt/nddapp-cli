@@ -6,7 +6,7 @@ use App\Commands\Abstracts\CommonStringProcessor;
 
 class UrlDecode extends CommonStringProcessor
 {
-    protected $signature = 'url-decode {string}';
+    protected $name = 'url-decode';
 
     protected $description = 'Url decode string';
 

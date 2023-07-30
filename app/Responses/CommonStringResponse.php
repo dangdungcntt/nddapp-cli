@@ -9,8 +9,9 @@ class CommonStringResponse implements ResponseInterface
 {
     public function __construct(
         protected string $content,
-        protected bool $succeed = true
-    ) {
+        protected bool   $succeed = true
+    )
+    {
     }
 
     public function toHtml(): string

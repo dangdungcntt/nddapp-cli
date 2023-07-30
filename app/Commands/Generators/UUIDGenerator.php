@@ -20,7 +20,7 @@ class UUIDGenerator extends Command
         $apiResponse = $nddApp->send(new UUIDGeneratorRequest(
             count: $this->option('count') ?? $this->argument('count'),
         ));
-        $response    = CommonStringResponse::create($apiResponse);
+        $response = CommonStringResponse::create($apiResponse);
 
         render($response->toHtml());
     }

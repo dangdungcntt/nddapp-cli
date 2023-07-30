@@ -6,7 +6,7 @@ use App\Commands\Abstracts\CommonStringProcessor;
 
 class SHA512Generator extends CommonStringProcessor
 {
-    protected $signature = 'sha512 {string}';
+    protected $name = 'sha512';
 
     protected $description = 'Generate SHA512 from string';
 

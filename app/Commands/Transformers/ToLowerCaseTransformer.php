@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 
 class ToLowerCaseTransformer extends CommonStringProcessor
 {
-    protected $signature = 'lower {string}';
+    protected $name = 'lower';
 
     protected $description = 'Convert string to lower case';
 

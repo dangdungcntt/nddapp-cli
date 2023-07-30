@@ -2,25 +2,34 @@
 
 namespace App\Commands\Converters;
 
+use App\Commands\Abstracts\PromptsMissingInputs;
 use App\NddApp;
 use App\Requests\SqlToMongoDbRequest;
 use App\Responses\SqlToMongoDbQueryResponse;
-use LaravelZero\Framework\Commands\Command;
 
 use function Termwind\render;
 
-class SqlToMongoDbQuery extends Command
+class SqlToMongoDbQuery extends PromptsMissingInputs
 {
-    protected $signature = 'sql2mongo {sql} {--p|pretty}';
+    protected $name = 'sql2mongo';
 
     protected $description = 'Convert SQL query to find/aggregate MongoDB query';
 
+
+    protected function getSignature(): string
+    {
+        return '{sql?} {--p|pretty}';
+    }
+
+    /**
+     * @throws \Exception
+     */
     public function handle(NddApp $nddApp): void
     {
         $apiResponse = $nddApp->send(new SqlToMongoDbRequest(
-            sql: $this->argument('sql')
+            sql: $this->argumentWithPrompt('sql', 'Enter SQL query:'),
         ));
-        $response    = SqlToMongoDbQueryResponse::create($apiResponse);
+        $response = SqlToMongoDbQueryResponse::create($apiResponse);
 
         render($this->option('pretty') ? $response->toPrettyHtml() : $response->toHtml());
     }

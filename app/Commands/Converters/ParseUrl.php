@@ -2,25 +2,34 @@
 
 namespace App\Commands\Converters;
 
+use App\Commands\Abstracts\PromptsMissingInputs;
 use App\NddApp;
 use App\Requests\UrlParserRequest;
 use App\Responses\UrlParserResponse;
-use LaravelZero\Framework\Commands\Command;
 
 use function Termwind\{render};
 
-class ParseUrl extends Command
+class ParseUrl extends PromptsMissingInputs
 {
-    protected $signature = 'parse-url {url}';
+    protected $name = 'parse-url';
 
     protected $description = 'Parse url info';
 
+
+    protected function getSignature(): string
+    {
+        return '{url?}';
+    }
+
+    /**
+     * @throws \Exception
+     */
     public function handle(NddApp $nddApp): void
     {
         $apiResponse = $nddApp->send(new UrlParserRequest(
-            url: $this->argument('url'),
+            url: $this->argumentWithPrompt('url', 'Enter url:'),
         ));
-        $response    = UrlParserResponse::create($apiResponse);
+        $response = UrlParserResponse::create($apiResponse);
 
         render($response->toHtml());
     }

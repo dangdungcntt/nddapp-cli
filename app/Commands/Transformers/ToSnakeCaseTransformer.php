@@ -7,8 +7,13 @@ use Illuminate\Support\Str;
 
 class ToSnakeCaseTransformer extends CommonStringProcessor
 {
-    protected $signature = 'snake {string} {--d|dot}';
+    protected $name = 'snake';
     protected $description = 'Convert string to snake case';
+
+    protected function getSignature(): string
+    {
+        return parent::getSignature() . ' {--d|dot}';
+    }
 
     public function process(string $string, array $options): string
     {

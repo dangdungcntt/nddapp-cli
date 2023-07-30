@@ -25,7 +25,7 @@ class PasswordGenerator extends Command
             lower: $this->option('lower'),
             upper: $this->option('upper'),
         ));
-        $response    = CommonStringResponse::create($apiResponse);
+        $response = CommonStringResponse::create($apiResponse);
 
         render($response->toHtml());
     }

@@ -6,9 +6,14 @@ use App\Commands\Abstracts\CommonStringProcessor;
 
 class Base64Encode extends CommonStringProcessor
 {
-    protected $signature = 'base64 {string} {--u|url-safe}';
+    protected $name = 'base64';
 
     protected $description = 'Base64 encode string';
+
+    protected function getSignature(): string
+    {
+        return parent::getSignature() . ' {--u|url-safe}';
+    }
 
     public function process(string $string, array $options): string
     {

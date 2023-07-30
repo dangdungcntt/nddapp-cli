@@ -6,7 +6,7 @@ use App\Commands\Abstracts\CommonStringProcessor;
 
 class UrlEncode extends CommonStringProcessor
 {
-    protected $signature = 'url-encode {string}';
+    protected $name = 'url-encode';
 
     protected $description = 'Url encode string';
 
